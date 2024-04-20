@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:Wpf.Templates.Converters">
+
+  <converters:BoolToVisible x:Key="BoolToVisibleConverter" />
+  <converters:BoolToVisible x:Key="InvertedBoolToVisibleConverter"
+                            Not="True" />
+
+  <converters:ValueConverterGroup x:Key="NullVisibleConverter">
+    <converters:NullBoolConverter />
+    <converters:BoolToVisible Not="True" />
+  </converters:ValueConverterGroup>
+
+  <converters:ValueConverterGroup x:Key="InvertedNullVisibleConverter">
+    <converters:NullBoolConverter />
+    <converters:BoolToVisible />
+  </converters:ValueConverterGroup>
+
+  <converters:ValueConverterGroup x:Key="WhitespaceVisibleConverter">
+    <converters:NullOrWhitespaceBoolConverter />
+    <converters:BoolToVisible />
+  </converters:ValueConverterGroup>
+
+  <converters:TypeBoolConverter x:Key="TypeBoolConverter" />
+
+</ResourceDictionary>

@@ -1,0 +1,51 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:attachedProperties="clr-namespace:Wpf.Templates.AttachedProperties"
+                    xmlns:fa="http://schemas.fontawesome.io/icons/"
+                    xmlns:state="clr-namespace:Wpf.Templates.Abstractions">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="ValueResources.xaml" />
+    <ResourceDictionary Source="ConverterResources.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+
+  <!--Стандартные шаблоны для состояний: ошибка, загрузка-->
+  <DataTemplate x:Key="LoaderControl">
+    <fa:ImageAwesome Icon="Spinner"
+                     Spin="True"
+                     SpinDuration="4"
+                     Width="25"
+                     Height="25" />
+  </DataTemplate>
+  <DataTemplate x:Key="ErrorControl"
+                DataType="{x:Type state:IErrorState}">
+    <Grid attachedProperties:AGrid.RowLengths="* Auto *"
+          attachedProperties:AGrid.ColumnLengths="* Auto *">
+      <StackPanel Grid.Row="1"
+                  Grid.Column="1">
+        <TextBlock Text="{Binding Error}"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="14"
+                   FontWeight="Medium" />
+        <Grid Height="20" />
+        <Grid attachedProperties:AGrid.ColumnLengths="* Auto *">
+          <Button Grid.Column="1"
+                  Content="Повторить"
+                  Padding="10 3"
+                  FontSize="13"
+                  Command="{Binding TryAgainCommand}"
+                  Visibility="{Binding TryAgainCommand, Converter={StaticResource NullVisibleConverter}}" />
+        </Grid>
+      </StackPanel>
+    </Grid>
+  </DataTemplate>
+  <DataTemplate x:Key="EmptyListControl"
+                DataType="{x:Type state:IEmptyState}">
+    <TextBlock Text="{Binding Message}"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               FontSize="14"
+               FontWeight="Medium" />
+  </DataTemplate>
+
+</ResourceDictionary>
