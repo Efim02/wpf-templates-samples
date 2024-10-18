@@ -1,61 +1,24 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-<Project Sdk="Microsoft.NET.Sdk">
+    <!--Общие свойства-->
+    <PropertyGroup>
+        <ProjectGuid>{6B04D92E-4E76-42D0-B462-7A9786F19D3F}</ProjectGuid>
+        <OutputType>WinExe</OutputType>
+        <RootNamespace>Wpf.Samples</RootNamespace>
+        <AssemblyName>Wpf.Samples</AssemblyName>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <TargetFramework>net48</TargetFramework>
+        <UseWpf>true</UseWpf>
+    </PropertyGroup>
 
-  <!--Общие свойства-->
-  <PropertyGroup>
-    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>{6B04D92E-4E76-42D0-B462-7A9786F19D3F}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>Wpf.Samples</RootNamespace>
-    <AssemblyName>Wpf.Samples</AssemblyName>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <TargetFramework>net48</TargetFramework>
-    <LangVersion>9</LangVersion>
-    <UseWpf>true</UseWpf>
-  </PropertyGroup>
+    <!--Остальные, добавляемые-->
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.77" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    </ItemGroup>
 
-  <!--Свойство компиляции-->
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>..\..\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>..\..\bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-
-  <!--Свойства авторства-->
-  <PropertyGroup>
-    <ProductVersion>2024</ProductVersion>
-    <Company>Раразботка Ефима Жабина</Company>
-    <Authors>Жабин Е.М.</Authors>
-    <Product>Шаблоны и примеры для WPF Framework</Product>
-    <Copyright>Copyright ©2024 Жабин Е.М.</Copyright>
-  </PropertyGroup>
-
-  <!--Остальные, добавляемые-->
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.77" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Wpf.Templates\Wpf.Templates.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Wpf.Templates\Wpf.Templates.csproj" />
+    </ItemGroup>
 
 </Project>

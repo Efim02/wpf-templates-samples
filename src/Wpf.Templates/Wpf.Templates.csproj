@@ -1,65 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <!--Общие свойства-->
-  <PropertyGroup>
-    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>963B13DC-3649-466C-8B7B-CE7C18EA5883</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>Wpf.Templates</RootNamespace>
-    <AssemblyName>Wpf.Templates</AssemblyName>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <TargetFramework>net48</TargetFramework>
-    <LangVersion>9</LangVersion>
-    <UseWpf>true</UseWpf>
-  </PropertyGroup>
-
-  <!--Свойство компиляции-->
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>..\..\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>..\..\bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-
-  <!--Свойства авторства-->
-  <PropertyGroup>
-    <ProductVersion>2024</ProductVersion>
-    <Company>Раразботка Ефима Жабина</Company>
-    <Authors>Жабин Е.М.</Authors>
-    <Product>Шаблоны и примеры для WPF Framework</Product>
-    <Copyright>Copyright ©2024 Жабин Е.М.</Copyright>
-  </PropertyGroup>
-
-  <!--Остальные, добавляемые-->
-  <ItemGroup>
-    <PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" />
-    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.77" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controls\" />
-    <Folder Include="Abstractions\" />
-    <Folder Include="Models\" />
-    <Folder Include="Views\" />
-  </ItemGroup>
+    <!--Общие свойства-->
+    <PropertyGroup>
+        <ProjectGuid>963B13DC-3649-466C-8B7B-CE7C18EA5883</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <RootNamespace>Wpf.Templates</RootNamespace>
+        <AssemblyName>Wpf.Templates</AssemblyName>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <TargetFramework>net48</TargetFramework>
+        <UseWpf>true</UseWpf>
+    </PropertyGroup>
 
 </Project>
