@@ -13,7 +13,7 @@ namespace Wpf.Templates.AttachedProperties
     /// Прикрепляемое свойство для <see cref="Grid" /> с целью упрощенного назначения колонок, строк.
     /// </summary>
     // ReSharper disable once ClassNeverInstantiated.Global Объект создается в XAML.
-    public class GridLengthsAttachedProperty : UIElement
+    public class GridAp : UIElement
     {
         public static readonly DependencyProperty ColumnLengthsProperty =
             DependencyProperty.RegisterAttached("ColumnLengths",
