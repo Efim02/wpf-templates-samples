@@ -1,4 +1,4 @@
-﻿#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 namespace Wpf.Templates.AttachedProperties
 {
     using System;
@@ -10,10 +10,10 @@ namespace Wpf.Templates.AttachedProperties
     using System.Windows.Controls;
 
     /// <summary>
-    /// Прикрепляемое свойство для <see cref="Grid" />.
+    /// Прикрепляемое свойство для <see cref="Grid" /> с целью упрощенного назначения колонок, строк.
     /// </summary>
     // ReSharper disable once ClassNeverInstantiated.Global Объект создается в XAML.
-    public class AGrid : UIElement
+    public class GridLengthsAttachedProperty : UIElement
     {
         public static readonly DependencyProperty ColumnLengthsProperty =
             DependencyProperty.RegisterAttached("ColumnLengths",
@@ -49,6 +49,9 @@ namespace Wpf.Templates.AttachedProperties
             element.SetValue(RowLengthsProperty, value);
         }
 
+        /// <summary>
+        /// Обработка изменения ширин колонок.
+        /// </summary>
         private static void OnColumnLengthsChanged(DependencyObject d, DependencyPropertyChangedEventArgs ev)
         {
             var grid = (Grid)d;
@@ -68,6 +71,9 @@ namespace Wpf.Templates.AttachedProperties
             }
         }
 
+        /// <summary>
+        /// Обработка изменения высот строк.
+        /// </summary>
         private static void OnRowLengthsChanged(DependencyObject d, DependencyPropertyChangedEventArgs ev)
         {
             var grid = (Grid)d;
