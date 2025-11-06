@@ -6,4 +6,15 @@
   <system:Boolean x:Key="True">True</system:Boolean>
   <system:Boolean x:Key="False">False</system:Boolean>
 
+    <!--Перечисления Enum. Пример-->
+
+    <!--Inners-->
+    <!--<collections:ArrayList x:Key="ImageFormatTypeEnum">
+        <inners:ImageFormatType>Png</inners:ImageFormatType>
+        <inners:ImageFormatType>Jpeg</inners:ImageFormatType>
+        <inners:ImageFormatType>Gif</inners:ImageFormatType>
+        <inners:ImageFormatType>SvgXml</inners:ImageFormatType>
+        <inners:ImageFormatType>Ttf</inners:ImageFormatType>
+    </collections:ArrayList>-->
+
 </ResourceDictionary>
